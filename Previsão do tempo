@@ -1,0 +1,19 @@
+query Weather {
+  weatherByPoint(request: {lat: 52.37125, lon: 4.89388}) {
+    now {
+      c: temperature
+      f: temperature(unit: FAHRENHEIT)
+      icon(format: SVG)
+    }
+    forecast {
+      hours(first: 48) {
+        edges {
+          node {
+            timestamp
+            temperature
+          }
+        }
+      }
+    }
+  }
+}
